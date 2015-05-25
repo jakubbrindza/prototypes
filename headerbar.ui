@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.10 -->
+  <object class="GtkWindow" id="MainWindow">
+    <property name="can_focus">False</property>
+    <property name="default_width">1000</property>
+    <property name="default_height">700</property>
+    <signal name="configure-event" handler="on_move" swapped="no"/>
+    <signal name="size-allocate" handler="on_size_allocate" swapped="no"/>
+    <child>
+    	<object class="GtkHeaderBar" id="headerbar">
+    		<property name="visible">True</property>
+    		<property name="show_close_button">True</property>
+    		<property name="title" translatable="yes">Tasks</property>
+	    	<child>
+	    		<object class="GtkMenuButton" id="new_task">
+	    			<property name="visible">True</property>
+	    			<property name="label" translatable="yes">_New Task</property>
+	                <property name="tooltip_text" translatable="yes">Create a new task</property>
+	                <property name="valign">center</property>
+	                <signal name="activate" handler="on_add_task" swapped="no"/>
+	    		</object>
+	    		<packing>
+	                <property name="pack_type">start</property>
+	            </packing>
+	            <style>
+                  <class name="text-button"/>
+              	</style>
+	    	</child>
+	    	<child>
+	    		<object class="GtkBox" id="view_box">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_focus">False</property>
+                    <property name="is_focus">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+			    		<object class="GtkMenuButton" id="work_view">
+			    			<property name="visible">True</property>
+			    			<property name="label" translatable="yes">_WorkView</property>
+			                <property name="tooltip_text" translatable="yes">WorkView</property>
+			                <property name="valign">center</property>
+			                <signal name="activate" handler="on_add_task" swapped="no"/>
+			    		</object>
+			            <style>
+		                  <class name="text-button"/>
+		              	</style>
+		    		</child>
+		    		<child>
+			    		<object class="GtkMenuButton" id="closed_tasks">
+			    			<property name="visible">True</property>
+			    			<property name="label" translatable="yes">_Closed</property>
+			                <property name="tooltip_text" translatable="yes">View Closed Tasks</property>
+			                <property name="valign">center</property>
+			                <signal name="activate" handler="on_add_task" swapped="no"/>
+			    		</object>
+			            <style>
+		                  <class name="text-button"/>
+		              	</style>
+		    		</child>
+		    		<packing>
+			                <property name="pack_type">start</property>
+			       	</packing>
+		    	</object>
+		    </child>
+		    <child>
+		    	<object class="GtkMenuButton" id="tags_view">
+	    			<property name="visible">True</property>
+	    			<property name="label" translatable="yes">_Tags</property>
+	                <property name="tooltip_text" translatable="yes">View Tags sidebar</property>
+	                <property name="valign">center</property>
+	                <signal name="activate" handler="on_add_task" swapped="no"/>
+	    		</object>
+	    		<packing>
+	                <property name="pack_type">start</property>
+	            </packing>
+	            <style>
+                  <class name="text-button"/>
+              	</style>
+		    </child>
+		    <child>
+		    	<object class="GtkMenuButton" id="settings">
+	    			<property name="visible">True</property>
+	    			<property name="label" translatable="yes">_Settings</property>
+	                <property name="tooltip_text" translatable="yes">View preferences</property>
+	                <property name="valign">center</property>
+	                <signal name="activate" handler="on_add_task" swapped="no"/>
+	    		</object>
+	    		<packing>
+	                <property name="pack_type">end</property>
+	            </packing>
+	            <style>
+                  <class name="text-button"/>
+              	</style>
+		    </child>
+		    <child>
+	    		<object class="GtkBox" id="extras">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_focus">False</property>
+                    <property name="is_focus">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+			    		<object class="GtkMenuButton" id="plugins">
+			    			<property name="visible">True</property>
+			    			<property name="label" translatable="yes">_Plugins</property>
+			                <property name="tooltip_text" translatable="yes">Plugins</property>
+			                <property name="valign">center</property>
+			                <signal name="activate" handler="on_add_task" swapped="no"/>
+			    		</object>
+			            <style>
+		                  <class name="text-button"/>
+		              	</style>
+		    		</child>
+		    		<child>
+			    		<object class="GtkMenuButton" id="synchronisation">
+			    			<property name="visible">True</property>
+			    			<property name="label" translatable="yes">_Synchronisation</property>
+			                <property name="tooltip_text" translatable="yes">View 
+			                	Synchronisation services</property>
+			                <property name="valign">center</property>
+			                <signal name="activate" handler="on_add_task" swapped="no"/>
+			    		</object>
+			            <style>
+		                  <class name="text-button"/>
+		              	</style>
+		    		</child>
+		    		<packing>
+			                <property name="pack_type">end</property>
+			       	</packing>
+		    	</object>
+		    </child>
+    	</object>
+    </child>
+</object>
+</interface>
