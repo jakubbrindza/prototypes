@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.10 -->
+  <object class="GtkWindow" id="MainWindow">
+    <property name="can_focus">False</property>
+    <property name="default_width">1000</property>
+    <property name="default_height">700</property>
+    <child type="titlebar">
+        <object class="GtkHeaderBar" id="headerbar">
+            <property name="visible">True</property>
+            <property name="show_close_button">True</property>
+            <child>
+                <object class="GtkMenuButton" id="new_task">
+                    <property name="visible">True</property>
+                    <property name="sensitive">True</property>
+                    <property name="label" translatable="yes">New Task</property>
+                    <property name="tooltip_text" translatable="yes">Create a new task</property>
+                    <property name="valign">center</property>
+                    <signal name="activate" handler="on_add_task" swapped="no"/>
+                </object>
+                <packing>
+                    <property name="pack_type">start</property>
+                </packing>
+                <style>
+                  <class name="text-button"/>
+                </style>
+            </child>
+            <child>
+                <object class="GtkBox" id="customisation_box">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_focus">False</property>
+                    <property name="is_focus">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+                        <object class="GtkMenuButton" id="settings">
+                            <property name="visible">True</property>
+                            <property name="label">Settings</property>
+                            <property name="sensitive">True</property>
+                            <property name="tooltip_text" translatable="yes">Settings/Preferences
+                            </property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                    <child>
+                        <object class="GtkMenuButton" id="tags">
+                            <property name="visible">True</property>
+                            <property name="label">Tags</property>
+                            <property name="sensitive">True</property>
+                            <property name="tooltip_text" translatable="yes">Tags Sidebar
+                               </property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                </object>
+                <packing>
+                        <property name="pack_type">start</property>
+                </packing>
+            </child>
+            <child type="title">
+                <object class="GtkStackSwitcher" id="stack_switcher">
+                    <property name="visible">True</property>
+                    <child>
+                        <object class="GtkMenuButton" id="normal_view">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Active Tasks</property>
+                            <property name="tooltip_text" translatable="yes">Normal, active tasks</property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                    <child>
+                        <object class="GtkMenuButton" id="work_view">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Actionable Tasks</property>
+                            <property name="tooltip_text" translatable="yes">aka WorkView</property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                    <child>
+                        <object class="GtkMenuButton" id="closed_tasks">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Closed Tasks</property>
+                            <property name="tooltip_text" translatable="yes">View Closed Tasks</property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                </object>
+            </child>
+            <child>
+                <object class="GtkMenuButton" id="search">
+                    <property name="visible">True</property>
+                    <property name="sensitive">True</property>
+                    <property name="tooltip_text" translatable="yes">Searching thing</property>
+                    <property name="valign">center</property>
+                    <child>
+                        <object class="GtkImage" id="search_icon">
+                            <property name="visible">True</property>
+                            <property name="icon-name">edit-find-symbolic</property>
+                            <property name="icon-size">1</property>
+                        </object>
+                    </child>
+                </object>
+                <packing>
+                    <property name="pack_type">end</property>
+                </packing>
+                <style>
+                  <class name="image-button"/>
+                </style>    
+            </child>
+            <child>
+                <object class="GtkBox" id="extras_box">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_focus">False</property>
+                    <property name="is_focus">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+                        <object class="GtkMenuButton" id="plugins">
+                            <property name="visible">True</property>
+                            <property name="label">Plugins</property>
+                            <property name="sensitive">True</property>
+                            <property name="tooltip_text" translatable="yes">Add plugins</property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                    <child>
+                        <object class="GtkMenuButton" id="synchronisation">
+                            <property name="visible">True</property>
+                            <property name="label">Synchronisation</property>
+                            <property name="sensitive">True</property>
+                            <property name="tooltip_text" translatable="yes">Synchronisation Services
+                               </property>
+                            <property name="valign">center</property>
+                        </object>
+                        <style>
+                          <class name="text-button"/>
+                        </style>
+                    </child>
+                </object>
+                <packing>
+                        <property name="pack_type">end</property>
+                </packing>
+            </child>
+        </object>
+    </child>
+    </object>
+</interface>
