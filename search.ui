@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <!-- interface-requires gtk+ 3.10 -->
+    <object class="GtkWindow" id="MainWindow">
+        <property name="title" translatable="yes">Stack Switcher Demo</property>
+        <property name="can_focus">False</property>
+        <property name="default_width">800</property>
+        <property name="default_height">400</property>
+        <child type="titlebar">
+            <object class="GtkHeaderBar" id="headerbar">
+                <property name="visible">True</property>
+                <property name="show_close_button">True</property>
+                <child>
+                    <object class="GtkMenuButton" id="search">
+                        <property name="visible">True</property>
+                        <property name="sensitive">True</property>
+                        <property name="tooltip_text" translatable="yes">Searching thing</property>
+                        <!-- <signal handler="on_add_task" name="activate" swapped="no"/>-->
+                        <property name="valign">center</property>
+                        <child>
+                            <object class="GtkImage" id="search_icon">
+                                <property name="visible">True</property>
+                                <property name="icon-name">edit-find-symbolic</property>
+                                <property name="icon-size">1</property>
+                            </object>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="pack_type">end</property>
+                    </packing>
+                    <style>
+                        <class name="image-button"/>
+                    </style>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox" id="main_vbox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="GtkSearchBar" id="search_bar">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="has_focus">True</property>
+                        <property name="search-mode-enabled">True</property>
+                        <property name="show_close_button">True</property>
+                        <child>
+                            <object class="GtkSearchEntry" id="search_entry">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="has_focus">True</property>
+                                <property name="is_focus">True</property>
+                                <property name="can_default">True</property>
+                                <property name="secondary_icon_stock">gtk-clear</property>
+                                <property name="primary_icon_activatable">False</property>
+                            </object>
+                            <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">2</property>
+                                <property name="position">0</property>
+                            </packing>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkLabel" id="search_label">
+                        <property name="label">SEARCH DEMO</property>
+                        <property name="valign">center</property>
+                    </object>
+                    <packing>
+                        
+                    </packing>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
