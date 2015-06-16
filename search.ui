@@ -11,12 +11,12 @@
                 <property name="visible">True</property>
                 <property name="show_close_button">True</property>
                 <child>
-                    <object class="GtkMenuButton" id="search">
+                    <object class="GtkToggleButton" id="search">
                         <property name="visible">True</property>
                         <property name="sensitive">True</property>
-                        <property name="tooltip_text" translatable="yes">Searching thing</property>
-                        <!-- <signal handler="on_add_task" name="activate" swapped="no"/>-->
+                        <property name="tooltip_text" translatable="yes">Search</property>
                         <property name="valign">center</property>
+                        <signal handler="on_search_toggled" name="clicked" swapped="no"/>
                         <child>
                             <object class="GtkImage" id="search_icon">
                                 <property name="visible">True</property>
@@ -44,18 +44,43 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="has_focus">True</property>
-                        <property name="search-mode-enabled">True</property>
-                        <property name="show_close_button">True</property>
+                        <property name="is_focus">True</property>
+                        <property name="search-mode-enabled">False</property>
+                        <property name="show_close_button">False</property>
+                        <property name="valign">center</property>
                         <child>
-                            <object class="GtkSearchEntry" id="search_entry">
+                            <object class="GtkBox" id="view_box">
                                 <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="has_focus">True</property>
-                                <property name="is_focus">True</property>
-                                <property name="can_default">True</property>
-                                <property name="secondary_icon_stock">gtk-clear</property>
-                                <property name="primary_icon_activatable">False</property>
+                                <property name="can_focus">False</property>
+                                <property name="has_focus">False</property>
+                                <property name="is_focus">False</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                    <object class="GtkSearchEntry" id="search_entry">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="has_focus">True</property>
+                                        <property name="is_focus">True</property>
+                                        <property name="can_default">True</property>
+                                        <property name="max-width-chars">40</property>
+                                        <property name="primary_icon_activatable">False</property>
+                                        <property name="placeholder-text">Search here</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="save_search">
+                                        <property name="label">Save Search</property>
+                                        <signal handler="on_search_activate" name="clicked" swapped="no"/>
+                                    </object>
+                                </child>
                             </object>
+                            <packing>
+                                <property name="primary_icon_activatable">False</property>
+                            </packing>
                             <packing>
                                 <property name="expand">False</property>
                                 <property name="fill">False</property>
@@ -71,7 +96,7 @@
                         <property name="valign">center</property>
                     </object>
                     <packing>
-                        
+                        <property name="position">1</property>
                     </packing>
                 </child>
             </object>
