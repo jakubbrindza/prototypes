@@ -18,7 +18,7 @@ class EditorApplication(Gtk.Application):
 
       self.builder.connect_signals(SIGNAL_CONNECTIONS_DIC)
 
-      self.window = builder.get_object("MainWindow")
+      self.window = self.builder.get_object("MainWindow")
       self.window.show_all()
 
    def on_mark_as_done(self, button):
@@ -30,11 +30,3 @@ class EditorApplication(Gtk.Application):
 win = EditorApplication().window
 win.connect("delete-event", Gtk.main_quit)
 Gtk.main()
-
-
-
-
-
-
-
-
